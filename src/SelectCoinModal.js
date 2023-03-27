@@ -14,6 +14,7 @@ const SelectCoinModal = props => {
     enableAirdropDiscovery: false,
     selectedCoins: [],
     coinsList: [],
+    customAddr: ""
   };
   const [state, setState] = useState(initialState);
 
@@ -72,6 +73,17 @@ const SelectCoinModal = props => {
     }
   }
 
+    const updateInput = e => {
+    if (e.target.name === 'customAddr') {
+      e.target.value = e.target.value.replace(/[^a-zA-Z0-9]/g, '');
+    } 
+    
+    setState(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  }
+
   const render = () => {
     return (
       <React.Fragment>
@@ -115,11 +127,22 @@ const SelectCoinModal = props => {
                     className="switch"
                     style={{'paddingRight': '20px'}} />
                   {state.enableAirdropDiscovery &&
-                    <p>
+                    <div>
+                    Custom Address Search: <input
+                type="text"
+                className="form-control edit send-coin-modal-style3"
+                name="customAddr"
+                onChange={updateInput}
+                value={state.customAddr}
+                placeholder="Enter an address"
+                autoComplete="off" />
+                     <p>
                       <small>
                         <strong>Notice:</strong> advanced address discovery settings will result in longer processing time!
                       </small>
                     </p>
+                  </div>
+                   
                   }
                 </div>
               }
@@ -130,7 +153,8 @@ const SelectCoinModal = props => {
                 explorerEndpoint={props.explorerEndpoint}
                 coins={state.selectedCoins}
                 closeParent={close}
-                enableAirdropDiscovery={state.enableAirdropDiscovery}>
+                enableAirdropDiscovery={state.enableAirdropDiscovery}
+                customAddr={state.customAddr}>
                 Begin scan
               </CheckAllBalancesButton>
             </div>

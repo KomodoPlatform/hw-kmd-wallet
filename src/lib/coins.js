@@ -156,6 +156,7 @@ const coins = {
       'https://rick.explorer.dexstats.info/insight-api-komodo/',
       'https://rick.kmd.dev/insight-api-komodo/',
     ],
+    airdrop: true,
     enabled: true,
   },
   MORTY: {
@@ -164,6 +165,7 @@ const coins = {
       'https://morty.explorer.dexstats.info/insight-api-komodo/',
       'https://morty.kmd.dev/insight-api-komodo/',
     ],
+    airdrop: true,
     enabled: true,
   },
   VRSC: {

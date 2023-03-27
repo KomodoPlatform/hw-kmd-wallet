@@ -116,13 +116,13 @@ const CheckAllBalancesButton = props => {
 
   const scanAddresses = async () => {
     const coinTickers = props.coins;
-    const {vendor, enableAirdropDiscovery} = props;
+    const {vendor, enableAirdropDiscovery, customAddr} = props;
     let balances = state.balances, currentAction;
     cancel = false;
     
     if (enableAirdropDiscovery) {
       setConfigVar('discoveryGapLimit', SETTINGS.DISCOVERY_GAP_LIMIT_AIRDROP);
-      setLocalStorageVar('settings', {discoveryGapLimit: SETTINGS.DISCOVERY_GAP_LIMIT_AIRDROP});
+      setLocalStorageVar('settings', { discoveryGapLimit: SETTINGS.DISCOVERY_GAP_LIMIT_AIRDROP });
     }
 
     if (state.index < props.coins.length) {
@@ -180,7 +180,7 @@ const CheckAllBalancesButton = props => {
               vendor,
               coin,
               null,
-              getLocalStorageVar('settings') && getLocalStorageVar('settings').historyLength
+              getLocalStorageVar('settings') && getLocalStorageVar('settings').historyLength, customAddr
             ),
             blockchain[blockchainAPI].getTipTime()
           ]);

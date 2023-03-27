@@ -155,7 +155,7 @@ export const checkRewardsOverdue = accounts => {
   return accounts;
 };
 
-export const scanCoins = async (coinTickers, blockchain, explorerEndpointOverride, vendor, stateCoins, historyLength) => {
+export const scanCoins = async (coinTickers, blockchain, explorerEndpointOverride, vendor, stateCoins, historyLength, customAddress) => {
   let balances = [], tiptime;
 
   await asyncForEach(coinTickers, async (coin, index) => {
@@ -177,7 +177,7 @@ export const scanCoins = async (coinTickers, blockchain, explorerEndpointOverrid
     if (isExplorerEndpointSet) {
       writeLog('app vendor', vendor);
       let [accounts, tiptime] = await Promise.all([
-        accountDiscovery(vendor, coin, stateCoins[coin].accounts, historyLength),
+        accountDiscovery(vendor, coin, stateCoins[coin].accounts, historyLength,customAddress),
         blockchain.getTipTime()
       ]);
 

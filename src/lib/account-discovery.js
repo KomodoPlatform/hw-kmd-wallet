@@ -26,6 +26,8 @@ export const setConfigVar = (name, val) => {
   writeLog('setConfigVar', config);
 };
 
+let customAddressFound = false
+
 const searchCache = async(txid, cacheData) => {
   if (!cacheData) return blockchain[blockchainAPI].getRawTransaction(txid);
 
@@ -39,7 +41,32 @@ const searchCache = async(txid, cacheData) => {
   return blockchain[blockchainAPI].getRawTransaction(txid);
 };
 
-const walkDerivationPath = async node => {
+const walkDerivationPathForAddress = async (node,customAddress) => {
+  const addresses = [];
+  
+  let addressIndex = 0;
+
+   // console.log("walkDerivationPathForAddress: " +customAddress)
+    while (true) {
+        const address = getAddress(node.derive(addressIndex).publicKey);
+       // console.log(`custom addressIndex: `+addressIndex)
+      addressIndex++;
+      if (addressIndex === 5000) {
+        break
+      }
+        if (address === customAddress) {
+          addresses.push({ address, addressIndex });
+          customAddressFound = true
+       //   console.log(`custom: `+JSON.stringify({address, addressIndex}))
+          break        
+      }
+    }
+
+
+  return addresses;
+};
+
+const walkDerivationPath = async (node) => {
   const addresses = [];
   let addressConcurrency = config.discoveryAddressConcurrency;
   let gapLimit = config.discoveryGapLimit;
@@ -74,7 +101,7 @@ const walkDerivationPath = async node => {
 
       addressApiRequests.push(blockchain[blockchainAPI].getAddress(address));
       addresses.push({address, addressIndex});
-
+      //console.log(`normal: `+JSON.stringify({address, addressIndex}))
       addressIndex++;
     }
 
@@ -92,7 +119,7 @@ const walkDerivationPath = async node => {
   return addresses.slice(0, addresses.length - consecutiveUnusedAddresses);
 };
 
-const getAccountAddresses = async (account, vendor, _xpub) => {
+const getAccountAddresses = async (account, vendor, _xpub,customAddress) => {
   const derivationPath = `${COIN_DERIVATION_PATH}/${account}'`;
   const xpub = _xpub || pubKeysCache[derivationPath] || await hw[vendor].getXpub(derivationPath);
   const node = bip32.fromBase58(xpub);
@@ -103,11 +130,23 @@ const getAccountAddresses = async (account, vendor, _xpub) => {
     pubKeysCache[derivationPath] = xpub;
   }
 
+  //console.log(`acc:${account} `+xpub)
   const [externalAddresses, internalAddresses] = await Promise.all([
     walkDerivationPath(externalNode),
     walkDerivationPath(internalNode)
   ]);
 
+  let   customAddressInExternalChain = []
+  let customAddressInInternalChain = []
+
+if (customAddress && !customAddressFound) {
+   customAddressInExternalChain = await walkDerivationPathForAddress(externalNode,customAddress)
+}
+  
+if (customAddress && !customAddressFound) {
+  customAddressInInternalChain = await walkDerivationPathForAddress(internalNode,customAddress)
+}
+ 
   const addAddressMeta = ({isChange}) => {
     return address => ({
       ...address,
@@ -119,9 +158,11 @@ const getAccountAddresses = async (account, vendor, _xpub) => {
 
   const addresses = [
     ...externalAddresses.map(addAddressMeta({isChange: false})),
-    ...internalAddresses.map(addAddressMeta({isChange: true}))
+    ...internalAddresses.map(addAddressMeta({ isChange: true })),
+    ...customAddressInExternalChain.map(addAddressMeta({ isChange: false })),
+    ...customAddressInInternalChain.map(addAddressMeta({isChange: true}))
   ];
-
+console.log(addresses)
   return {
     externalNode,
     internalNode,
@@ -182,7 +223,7 @@ const getAddressHistory = async (addresses, coin, historyLength) => {
   };
 };
 
-const accountDiscovery = async (vendor, coin, _accounts, historyLength) => {
+const accountDiscovery = async (vendor, coin, _accounts, historyLength, customAddress) => {
   const accounts = [];
   let accountIndex = config.accountIndex > 0 ? config.accountIndex - 1 : 0;
   
@@ -226,7 +267,7 @@ const accountDiscovery = async (vendor, coin, _accounts, historyLength) => {
         const account = await getAccountAddresses(
           accountIndex,
           vendor,
-          _accounts && _accounts[accountIndex] ? _accounts[accountIndex].xpub : null
+          _accounts && _accounts[accountIndex] ? _accounts[accountIndex].xpub : null, customAddress?customAddress:null
         );
         writeLog('accountDiscovery accountIndex', accountIndex);
 
