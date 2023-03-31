@@ -1,7 +1,8 @@
 const coins = {
   KMD: {
-    explorer: 'https://kmd.explorer.dexstats.info/',
+    explorer: 'https://kmdexplorer.io/',
     api: [
+      'https://kmdexplorer.io/insight-api-komodo/',
       'https://kmd.explorer.dexstats.info/insight-api-komodo/',
     ],
     prices: {
