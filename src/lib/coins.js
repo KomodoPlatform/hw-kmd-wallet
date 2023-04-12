@@ -133,20 +133,11 @@ const coins = {
     api: ['https://labs.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  VOTE2022: {
-    explorer: 'https://vote.explorer.dexstats.info/',
+  VOTE2023: {
+    explorer: 'https://vote.kmdexplorer.io/',
     api: [
-      'https://vote.explorer.dexstats.info/insight-api-komodo/',
+      'https://vote2023.dragonhound.info/insight-api-komodo/',
       'https://vote.kmdexplorer.io/insight-api-komodo/',
-    ],
-    airdrop: true,
-    enabled: true,
-  },
-  KIP0001: {
-    explorer: 'https://kip0001.explorer.kmd.io/',
-    api: [
-      'https://kip0001.explorer.dexstats.info/insight-api-komodo/',
-      'https://kip0001.explorer.kmd.io/insight-api-komodo/',
     ],
     airdrop: true,
     enabled: true,
