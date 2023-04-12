@@ -45,7 +45,7 @@ const Account = props => {
             <div className={`coin-icons-wrapper ${coin}-icon-size-sm`}>
               <div
                 className={`coin-icons ${coin}`}
-                style={{backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons.png')`}}></div>
+                style={{backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons1.png')`}}></div>
             </div>
           </div>
           <span className="account-name">{coin} {accountIndex + 1}</span>
