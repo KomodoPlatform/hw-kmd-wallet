@@ -47,7 +47,7 @@ const getKomodoRewards = utxo => {
 	// https://github.com/KomodoPlatform/kips/blob/main/kip-0001.mediawiki
 	// https://github.com/KomodoPlatform/komodo/pull/584
 	if (height >= N_S7_HARDFORK_HEIGHT) {
-		rewards = rewards / 5;
+		rewards = Math.floor(rewards / 500);
 	}
 
 	// Ensure reward value is never negative
