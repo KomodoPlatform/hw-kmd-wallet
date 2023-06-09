@@ -6,6 +6,7 @@ const ONE_HOUR = 60;
 const ONE_MONTH = 31 * 24 * 60;
 const ONE_YEAR = 365 * 24 * 60;
 const DEVISOR = 10512000;
+const N_S7_HARDFORK_HEIGHT = 3484958;
 
 const getKomodoRewards = utxo => {
 	// Validate types
@@ -40,7 +41,14 @@ const getKomodoRewards = utxo => {
 	rewardPeriod -= 59;
 
 	// Calculate rewards
-	const rewards = Math.floor(satoshis / DEVISOR) * rewardPeriod;
+	let rewards = Math.floor(satoshis / DEVISOR) * rewardPeriod;
+
+	// Vote-KIP0001 resulted in a reduction of the AUR from 5% to 0.01%
+	// https://github.com/KomodoPlatform/kips/blob/main/kip-0001.mediawiki
+	// https://github.com/KomodoPlatform/komodo/pull/584
+	if (height >= N_S7_HARDFORK_HEIGHT) {
+		rewards = Math.floor(rewards / 500);
+	}
 
 	// Ensure reward value is never negative
 	if (rewards < 0) {
