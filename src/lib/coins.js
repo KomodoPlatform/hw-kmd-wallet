@@ -161,9 +161,8 @@ const coins = {
   VRSC: {
     explorer: 'https://insight.verus.io/',
     api: [
-      'https://insight.verus.io/api/',
+      'https://vrsc-explorer.lordofthechains.com/',
       'https://vrsc.explorer.dexstats.info/insight-api-komodo/',
-      'https://insight.vrsc.0x03.services/insight-api-komodo/',
     ],
     prices: {
       coinpaprika: 'vrsc-verus-coin',
