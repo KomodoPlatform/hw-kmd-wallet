@@ -1,6 +1,6 @@
 import React from 'react';
 import Transactions from './Transactions';
-import {CACHE_MAX_LIFETIME} from './constants';
+import { CACHE_MAX_LIFETIME } from './constants';
 import humanReadableSatoshis from './lib/human-readable-satoshis';
 import ClaimRewardsButton from './ClaimRewardsButton';
 import CoinSettingsModal from './CoinSettingsModal';
@@ -9,9 +9,9 @@ import {
   isElectron,
   shell,
 } from './Electron';
-import {writeLog} from './Debug';
+import { writeLog } from './Debug';
 import coinsList from './lib/coins';
-import {checkTimestamp} from './lib/time';
+import { checkTimestamp } from './lib/time';
 import './Accounts.scss';
 import './Account.scss';
 
@@ -30,7 +30,7 @@ const Account = props => {
       balance,
       claimableAmount,
     } = account;
-    
+
     writeLog('account', account);
     writeLog('utxos', utxos);
     writeLog('history', history);
@@ -45,7 +45,7 @@ const Account = props => {
             <div className={`coin-icons-wrapper ${coin}-icon-size-sm`}>
               <div
                 className={`coin-icons ${coin}`}
-                style={{backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons1.png')`}}></div>
+                style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2024.png')` }}></div>
             </div>
           </div>
           <span className="account-name">{coin} {accountIndex + 1}</span>
@@ -60,7 +60,7 @@ const Account = props => {
               <span
                 className="kmd-rewards-account-overdue-badge"
                 title="Rewards claim overdue!">
-              <i>!</i>
+                <i>!</i>
               </span>
             }
           </td>
@@ -88,7 +88,7 @@ const Accounts = ({
   <div className="container content">
     <div className="accounts-block">
       <h4>
-        {activeAccount !== null ? 'Account details' : 'Accounts' }
+        {activeAccount !== null ? 'Account details' : 'Accounts'}
       </h4>
       {activeAccount === null &&
         <CoinSettingsModal
@@ -141,9 +141,9 @@ const Accounts = ({
       </div>
     }
     {activeCoin === 'KMD' &&
-     activeAccount !== null &&
-     coins[activeCoin].accounts[activeAccount].balance > 0 &&
-     coins[activeCoin].accounts[activeAccount].enabled &&
+      activeAccount !== null &&
+      coins[activeCoin].accounts[activeAccount].balance > 0 &&
+      coins[activeCoin].accounts[activeAccount].enabled &&
       <div className="text-center">
         {coins[activeCoin].accounts[activeAccount].claimableAmount > 0 &&
           <ClaimRewardsButton

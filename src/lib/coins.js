@@ -133,29 +133,11 @@ const coins = {
     api: ['https://labs.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  KIP0002: {
-    explorer: 'https://kip0002.kmdexplorer.io/',
+  VOTE2024: {
+    explorer: 'https://vote2024.kmdexplorer.io/',
     api: [
-      'https://kip0002.kmdexplorer.io/insight-api-komodo/',
-      "https://kip0002.explorer.lordofthechains.com/insight-api-komodo/"
-    ],
-    airdrop: true,
-    enabled: true,
-  },
-  KIP0003: {
-    explorer: 'https://kip0003.kmdexplorer.io/',
-    api: [
-      'https://kip0003.kmdexplorer.io/insight-api-komodo/',
-      "https://kip0003.explorer.lordofthechains.com/insight-api-komodo/"
-    ],
-    airdrop: true,
-    enabled: true,
-  },
-  KIP0004: {
-    explorer: 'https://kip0004.kmdexplorer.io/',
-    api: [
-      'https://kip0004.kmdexplorer.io/insight-api-komodo/',
-      "https://kip0004.explorer.lordofthechains.com/insight-api-komodo/"
+      'https://vote.kmdexplorer.io/insight-api-komodo/',
+      "https://vote2024.explorer.lordofthechains.com/insight-api-komodo/"
     ],
     airdrop: true,
     enabled: true,

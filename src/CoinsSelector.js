@@ -1,13 +1,13 @@
 import React from 'react';
 import SelectCoinModal from './SelectCoinModal';
-import {writeLog} from './Debug';
+import { writeLog } from './Debug';
 import './CoinsSelector.scss';
 
 const CoinsSelector = props => {
   const checkKMDRewards = () => {
     const accounts = props.coins.KMD.accounts;
     let isRewardsOverdueCounter = 0;
-    
+
     for (let i = 0; i < accounts.length; i++) {
       if (accounts[i].isRewardsOverdue) isRewardsOverdueCounter++;
     }
@@ -31,16 +31,16 @@ const CoinsSelector = props => {
                 <div className={`coin-icons-wrapper ${coinTicker}-icon-size-md`}>
                   <div
                     className={`coin-icons ${coinTicker}`}
-                    style={{backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons1.png')`}}></div>
+                    style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2024.png')` }}></div>
                 </div>
               </div>
               {coinTicker === 'KMD' &&
-               checkKMDRewards() > 0 &&
-               <div
-                className="kmd-rewards-main-overdue-badge"
-                title={`${checkKMDRewards() > 0 && checkKMDRewards() < 2 ? 'Rewards claim overdue!' : checkKMDRewards() + ' accounts have rewards claim overdue!'}`}>
-                <i>{checkKMDRewards()}</i>
-               </div>
+                checkKMDRewards() > 0 &&
+                <div
+                  className="kmd-rewards-main-overdue-badge"
+                  title={`${checkKMDRewards() > 0 && checkKMDRewards() < 2 ? 'Rewards claim overdue!' : checkKMDRewards() + ' accounts have rewards claim overdue!'}`}>
+                  <i>{checkKMDRewards()}</i>
+                </div>
               }
             </div>
           ))}

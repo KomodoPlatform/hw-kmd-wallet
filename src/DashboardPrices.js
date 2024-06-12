@@ -1,11 +1,11 @@
 import React from 'react';
 import './DashboardPrices.scss';
-import {PRICE_DEFAULT_COINS} from './constants';
+import { PRICE_DEFAULT_COINS } from './constants';
 
 const DashboardPrices = props => {
   const render = () => {
     const coins = PRICE_DEFAULT_COINS;
-    const {prices} = props;
+    const { prices } = props;
     const coinPriceTickers = Object.keys(prices);
 
     return (
@@ -29,7 +29,7 @@ const DashboardPrices = props => {
                         <div className={`coin-icons-wrapper ${item}-icon-size-sm`}>
                           <div
                             className={`coin-icons ${item}`}
-                            style={{backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons1.png')`}}></div>
+                            style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2024.png')` }}></div>
                         </div>
                       </div>
                       <span className="coin-name">{item}</span>
@@ -49,7 +49,7 @@ const DashboardPrices = props => {
                         <div className={`coin-icons-wrapper ${item}-icon-size-sm`}>
                           <div
                             className={`coin-icons ${item}`}
-                            style={{backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons1.png')`}}></div>
+                            style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2024.png')` }}></div>
                         </div>
                       </div>
                       <span className="coin-name">{item}</span>

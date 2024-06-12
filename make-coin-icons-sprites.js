@@ -35,7 +35,7 @@ Spritesmith.run({
   }
 
   // output the image
-  fs.writeFileSync(__dirname + '/public/coin-icons1.png', result.image);
+  fs.writeFileSync(__dirname + '/public/coin-icons-2024.png', result.image);
   //console.log(result.coordinates)
   //console.log(result.properties)
 
@@ -59,7 +59,7 @@ Spritesmith.run({
     const resizeYmd = (maxSize.md.height / result.coordinates[resultKeys[i]].height) * 100;
     const resizeXsm = (maxSize.sm.width / result.coordinates[resultKeys[i]].width) * 100;
     const resizeYsm = (maxSize.sm.height / result.coordinates[resultKeys[i]].height) * 100;
-    console.log(iconsList[i], 'orig size', result.coordinates[resultKeys[i]].width, result.coordinates[resultKeys[i]].height, ', resize',  resizeXmd, resizeYmd);
+    console.log(iconsList[i], 'orig size', result.coordinates[resultKeys[i]].width, result.coordinates[resultKeys[i]].height, ', resize', resizeXmd, resizeYmd);
 
     coinsCssResize.push(`
       .${iconsList[i]}-icon-size-md {
