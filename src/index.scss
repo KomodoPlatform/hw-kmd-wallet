@@ -20,6 +20,26 @@ html {
   background: inherit !important;
 }
 
+.trezor-link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+ flex-direction: column;
+ max-width: 300px;
+ text-align: left;
+}
+
+.trezor-link span {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-left: 10px;
+  color: #121958;
+}
+
 .vendor-trezor,
 .vendor-ledger {
   background: #fff;

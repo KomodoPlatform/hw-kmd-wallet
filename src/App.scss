@@ -96,6 +96,10 @@
     
     .vendor-selector-items {
       text-align: center;
+      display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
     }
     
     .content {

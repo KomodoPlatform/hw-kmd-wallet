@@ -14,7 +14,8 @@ const AddAccount = props => {
     actions: {
       connect: {
         icon: 'fab fa-usb',
-        description: props.vendor === 'ledger' ? <div>Connect and unlock your Ledger, then open the Komodo app on your device.</div> : <div>Connect and unlock your Trezor.</div>,
+        //description: props.vendor === 'ledger' ? <div>Connect and unlock your Ledger, then open the Komodo app on your device.</div> : <div>Connect and unlock your Trezor.</div>,
+        description: <div>Connect and unlock your Ledger, then open the Komodo app on your device.</div>,
         state: null
       },
       approve: {

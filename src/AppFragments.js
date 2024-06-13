@@ -70,11 +70,14 @@ export const VendorSelector = ({setVendor}) => (
         src={`${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}ledger-logo.png`}
         alt="Ledger"
         onClick={() => setVendor('ledger')} />
+      <a href='https://app.komodoplatform.com' target='_blank' rel='noreferrer' className='trezor-link'>
       <img
         className="vendor-trezor"
         src={`${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}trezor-logo.png`}
-        alt="Trezor"
-        onClick={() => setVendor('trezor')} />
+        alt="Trezor" />
+
+        <span>This link will take you to the Komodo Web Wallet. On the Komodo Web Wallet, please click the "Connect Wallet" button and then the "Connect Hardware Wallet" button to connect your Trezor.</span>
+      </a>        
     </div>
   </div>
 );
