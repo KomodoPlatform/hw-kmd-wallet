@@ -31,7 +31,7 @@ const CoinsSelector = props => {
                 <div className={`coin-icons-wrapper ${coinTicker}-icon-size-md`}>
                   <div
                     className={`coin-icons ${coinTicker}`}
-                    style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025.png')` }}></div>
+                    style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025-1.png')` }}></div>
                 </div>
               </div>
               {coinTicker === 'KMD' &&

@@ -29,7 +29,7 @@ const DashboardPrices = props => {
                         <div className={`coin-icons-wrapper ${item}-icon-size-sm`}>
                           <div
                             className={`coin-icons ${item}`}
-                            style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025.png')` }}></div>
+                            style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025-1.png')` }}></div>
                         </div>
                       </div>
                       <span className="coin-name">{item}</span>
@@ -49,7 +49,7 @@ const DashboardPrices = props => {
                         <div className={`coin-icons-wrapper ${item}-icon-size-sm`}>
                           <div
                             className={`coin-icons ${item}`}
-                            style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025.png')` }}></div>
+                            style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025-1.png')` }}></div>
                         </div>
                       </div>
                       <span className="coin-name">{item}</span>
