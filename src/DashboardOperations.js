@@ -17,7 +17,7 @@ const DashboardOperations = props => {
                   <div className={`coin-icons-wrapper ${item.coin}-icon-size-sm`}>
                     <div
                       className={`coin-icons ${item.coin}`}
-                      style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2024.png')` }}></div>
+                      style={{ backgroundImage: `url('${process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL + '/' : ''}coin-icons-2025.png')` }}></div>
                   </div>
                 </div>
                 <span className="direction">{item.type}</span>

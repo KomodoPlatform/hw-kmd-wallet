@@ -35,7 +35,7 @@ Spritesmith.run({
   }
 
   // output the image
-  fs.writeFileSync(__dirname + '/public/coin-icons-2024.png', result.image);
+  fs.writeFileSync(__dirname + '/public/coin-icons-2025.png', result.image);
   //console.log(result.coordinates)
   //console.log(result.properties)
 

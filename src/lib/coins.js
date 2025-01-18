@@ -10,109 +10,19 @@ const coins = {
     },
     enabled: true,
   },
-  AXO: {
-    explorer: 'https://axo.explorer.dexstats.info/',
-    api: ['https://axo.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: false,
-  },
   KOIN: {
     explorer: 'https://koin.explorer.dexstats.info/',
     api: ['https://koin.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
-  },
-  MESH: {
-    explorer: 'https://mesh.explorer.dexstats.info/',
-    api: ['https://mesh.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  DEX: {
-    explorer: 'https://dex.explorer.dexstats.info/',
-    api: ['https://dex.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  SUPERNET: {
-    explorer: 'https://supernet.explorer.dexstats.info/',
-    api: ['https://supernet.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
+  },  
   CCL: {
     explorer: 'https://ccl.explorer.dexstats.info/',
     api: ['https://ccl.explorer.dexstats.info/insight-api-komodo/'],
     enabled: false,
   },
-  PGT: {
-    explorer: 'https://pgt.explorer.dexstats.info/',
-    api: ['https://pgt.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  MSHARK: {
-    explorer: 'https://mshark.explorer.dexstats.info/',
-    api: ['https://mshark.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  REVS: {
-    explorer: 'https://revs.explorer.dexstats.info/',
-    api: ['https://revs.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  PANGEA: {
-    explorer: 'https://pangea.explorer.dexstats.info/',
-    api: ['https://pangea.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  JUMBLR: {
-    explorer: 'https://jumblr.explorer.dexstats.info/',
-    api: ['https://jumblr.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  BET: {
-    explorer: 'https://bet.explorer.dexstats.info/',
-    api: ['https://bet.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  CRYPTO: {
-    explorer: 'https://crypto.explorer.dexstats.info/',
-    api: ['https://crypto.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  HODL: {
-    explorer: 'https://hodl.explorer.dexstats.info/',
-    api: ['https://hodl.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
   ILN: {
     explorer: 'https://explorer.ilien.io/',
     api: ['https://explorer.ilien.io/insight-api-komodo/'],
-    enabled: true,
-  },
-  BOTS: {
-    explorer: 'https://bots.explorer.dexstats.info/',
-    api: ['https://bots.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  MGW: {
-    explorer: 'https://mgw.explorer.dexstats.info/',
-    api: ['https://mgw.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: true,
-  },
-  WLC21: {
-    explorer: 'https://wlc21.explorer.dexstats.info/',
-    api: ['https://wlc21.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: false,
-  },
-  COQUICASH: {
-    explorer: 'https://coquicash.explorer.dexstats.info/',
-    api: ['https://coquicash.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: false,
-  },
-  BTCH: {
-    explorer: 'https://btch.explorer.dexstats.info/',
-    api: ['https://btch.explorer.dexstats.info/insight-api-komodo/'],
-    enabled: false,
-  },
-  NINJA: {
-    explorer: 'https://ninja.explorer.dexstats.info/',
-    api: ['https://ninja.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
   THC: {
@@ -128,7 +38,101 @@ const coins = {
     },
     enabled: true,
   },
-  LABS: {
+  VRSC: {
+    explorer: 'https://insight.verus.io/',
+    api: [
+      'https://vrsc-explorer.lordofthechains.com/',
+      'https://vrsc.explorer.dexstats.info/insight-api-komodo/',
+    ],
+    prices: {
+      coinpaprika: 'vrsc-verus-coin',
+    },
+    enabled: true,
+  },
+  CLC: {
+    explorer: 'https://clc.explorer.dexstats.info/',
+    api: ['https://clc.explorer.dexstats.info/insight-api-komodo/'],
+    prices: {
+      coinpaprika: 'clc-collider-coin',
+    },
+    enabled: true,
+  },
+  GLEEC: {
+    explorer: 'https://gleec.xyz/',
+    api: [
+      'https://gleec.explorer.dexstats.info/insight-api-komodo/',
+      'https://gleec.xyz/insight-api-komodo/',
+    ],
+    prices: {
+      coinpaprika: 'gleec-gleec-coin',
+    },
+    enabled: true,
+  },
+  TOKEL: {
+    explorer: 'https://tokel.explorer.dexstats.info/',
+    api: [
+      'https://tokel.explorer.dexstats.info/insight-api-komodo/',
+    ],
+    airdrop: true,
+    prices: {
+      coinpaprika: 'tkl-tokel',
+    },
+    enabled: true,
+  },
+  DOC: {
+    explorer: 'https://doc.explorer.dexstats.info/',
+    api: [
+      'https://doc.explorer.dexstats.info/insight-api-komodo/',
+    ],
+    enabled: true,
+  },
+  MARTY: {
+    explorer: 'https://marty.explorer.dexstats.info/',
+    api: [
+      'https://marty.explorer.dexstats.info/insight-api-komodo/',
+    ],
+    enabled: true,
+  },
+  MDX: {
+    explorer: 'https://mdx.xpl.monster/',
+    api: ['https://mdx.xpl.monster/insight-api-komodo/'],
+    enabled: true,
+  },
+  RAPH: {
+    explorer: 'https://raph.xpl.monster/',
+    api: ['https://raph.xpl.monster/insight-api-komodo/'],
+    enabled: true,
+  },
+  BCZERO: {
+    explorer: 'https://bczero.xpl.monster/',
+    api: ['https://bczero.xpl.monster/insight-api-komodo/'],
+    enabled: true,
+  },
+    /* Removed from dPoW
+SOULJA: {
+    explorer: 'https://soulja.explorer.dexstats.info/',
+    api: ['https://soulja.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+  DP: {
+    explorer: 'https://dp.explorer.dexstats.info/',
+    api: ['https://dp.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+    WSB: {
+    explorer: 'https://wsb.explorer.dexstats.info/',
+    api: [
+      'https://wsb.explorer.dexstats.info/insight-api-komodo/',
+    ],
+    airdrop: true,
+    enabled: false,
+  },
+  SPACE: {
+    explorer: 'https://explorer.spaceworks.co/',
+    api: ['https://explorer.spaceworks.co/api/'],
+    enabled: true,
+  },
+    LABS: {
     explorer: 'https://labs.explorer.dexstats.info/',
     api: ['https://labs.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
@@ -158,77 +162,98 @@ const coins = {
     ],
     enabled: true,
   },
-  VRSC: {
-    explorer: 'https://insight.verus.io/',
-    api: [
-      'https://vrsc-explorer.lordofthechains.com/',
-      'https://vrsc.explorer.dexstats.info/insight-api-komodo/',
-    ],
-    prices: {
-      coinpaprika: 'vrsc-verus-coin',
-    },
+BOTS: {
+    explorer: 'https://bots.explorer.dexstats.info/',
+    api: ['https://bots.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  WSB: {
-    explorer: 'https://wsb.explorer.dexstats.info/',
-    api: [
-      'https://wsb.explorer.dexstats.info/insight-api-komodo/',
-    ],
-    airdrop: true,
+  MGW: {
+    explorer: 'https://mgw.explorer.dexstats.info/',
+    api: ['https://mgw.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+  WLC21: {
+    explorer: 'https://wlc21.explorer.dexstats.info/',
+    api: ['https://wlc21.explorer.dexstats.info/insight-api-komodo/'],
     enabled: false,
   },
-  SPACE: {
-    explorer: 'https://explorer.spaceworks.co/',
-    api: ['https://explorer.spaceworks.co/api/'],
+  COQUICASH: {
+    explorer: 'https://coquicash.explorer.dexstats.info/',
+    api: ['https://coquicash.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: false,
+  },
+  BTCH: {
+    explorer: 'https://btch.explorer.dexstats.info/',
+    api: ['https://btch.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: false,
+  },
+  NINJA: {
+    explorer: 'https://ninja.explorer.dexstats.info/',
+    api: ['https://ninja.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  CLC: {
-    explorer: 'https://clc.explorer.dexstats.info/',
-    api: ['https://clc.explorer.dexstats.info/insight-api-komodo/'],
-    prices: {
-      coinpaprika: 'clc-collider-coin',
-    },
+ BET: {
+    explorer: 'https://bet.explorer.dexstats.info/',
+    api: ['https://bet.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  SOULJA: {
-    explorer: 'https://soulja.explorer.dexstats.info/',
-    api: ['https://soulja.explorer.dexstats.info/insight-api-komodo/'],
+  CRYPTO: {
+    explorer: 'https://crypto.explorer.dexstats.info/',
+    api: ['https://crypto.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  DP: {
-    explorer: 'https://dp.explorer.dexstats.info/',
-    api: ['https://dp.explorer.dexstats.info/insight-api-komodo/'],
+  HODL: {
+    explorer: 'https://hodl.explorer.dexstats.info/',
+    api: ['https://hodl.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  GLEEC: {
-    explorer: 'https://gleec.xyz/',
-    api: [
-      'https://gleec.explorer.dexstats.info/insight-api-komodo/',
-      'https://gleec.xyz/insight-api-komodo/',
-    ],
-    prices: {
-      coinpaprika: 'gleec-gleec-coin',
-    },
+PGT: {
+    explorer: 'https://pgt.explorer.dexstats.info/',
+    api: ['https://pgt.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  TOKEL: {
-    explorer: 'https://tokel.explorer.dexstats.info/',
-    api: [
-      'https://tokel.explorer.dexstats.info/insight-api-komodo/',
-    ],
-    airdrop: true,
-    prices: {
-      coinpaprika: 'tkl-tokel',
-    },
+  MSHARK: {
+    explorer: 'https://mshark.explorer.dexstats.info/',
+    api: ['https://mshark.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
-  TKLTEST: {
-    explorer: 'https://tkltest.explorer.dexstats.info/',
-    api: [
-      'https://tkltest.explorer.dexstats.info/insight-api-komodo/',
-    ],
+  REVS: {
+    explorer: 'https://revs.explorer.dexstats.info/',
+    api: ['https://revs.explorer.dexstats.info/insight-api-komodo/'],
     enabled: true,
   },
+  PANGEA: {
+    explorer: 'https://pangea.explorer.dexstats.info/',
+    api: ['https://pangea.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+  JUMBLR: {
+    explorer: 'https://jumblr.explorer.dexstats.info/',
+    api: ['https://jumblr.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+  MESH: {
+    explorer: 'https://mesh.explorer.dexstats.info/',
+    api: ['https://mesh.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+  DEX: {
+    explorer: 'https://dex.explorer.dexstats.info/',
+    api: ['https://dex.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+  SUPERNET: {
+    explorer: 'https://supernet.explorer.dexstats.info/',
+    api: ['https://supernet.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: true,
+  },
+    AXO: {
+    explorer: 'https://axo.explorer.dexstats.info/',
+    api: ['https://axo.explorer.dexstats.info/insight-api-komodo/'],
+    enabled: false,
+  },
+   */
+  
   /* coins below need special handling due to no overwinter support
   ZILLA: {
     explorer: 'https://zilla.explorer.dexstats.info/',
